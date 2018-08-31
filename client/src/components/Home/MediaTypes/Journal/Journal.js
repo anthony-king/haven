@@ -248,7 +248,8 @@ export default class Journal extends React.Component {
               analyzeEntry={this.analyzeEntry}
               changeView={this.changeView}
               getEntries={this.getEntries}
-              saveEntry={this.saveEntry.bind(this)} />
+              saveEntry={this.saveEntry.bind(this)} 
+            />
           </ImageBackground>
         </View>
       )
@@ -257,7 +258,8 @@ export default class Journal extends React.Component {
     return (
       <ReadFullEntry
         changeView={this.changeView.bind(this)}
-        entry={this.state.view} />
+        entry={this.state.view} 
+      />
     )
   }
 }

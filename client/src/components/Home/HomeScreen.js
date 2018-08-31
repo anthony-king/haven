@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: DEVICE_HEIGHT,
-    // backgroundColor: "rgb(26,201,141)",
   },
   iconsContainerTopRow: {
     flex: 1,

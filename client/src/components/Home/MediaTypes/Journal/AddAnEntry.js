@@ -27,7 +27,7 @@ export default class AddAnEntry extends React.Component {
   //if entry is not over the limit it is sent to be analyzed for sentiment score
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.navRow}>
           <Ionicons
             name="md-add"
@@ -58,16 +58,22 @@ export default class AddAnEntry extends React.Component {
         <Text style={{ padding: 3 }}>
         </Text>
 
+      <View style={styles.textInputContainer}>      
         <TextInput
-          style={{ flexWrap: 'wrap', borderColor: 'transparent', borderWidth: 1, padding: 2, paddingLeft: 10, fontSize: 24 }}
-          onChangeText={(title) => this.setState({
-            title
-          })}
+          style={{ 
+              flexWrap: 'wrap', 
+              borderColor: 'transparent', 
+              borderWidth: 1, 
+              padding: 2, paddingLeft: 10, 
+              fontSize: 24 
+          }}
+          onChangeText={(title) => this.setState({ title })}
           value={this.state.title}
           multiline={true}
           editable={true}
           placeholderTextColor='#ffffff'
           placeholder="Title"
+          color="#ffffff"
           onContentSizeChange={(e) => this.updateSize(e.nativeEvent.contentSize.height)}
         />
 
@@ -75,7 +81,15 @@ export default class AddAnEntry extends React.Component {
         </Text>
 
         <TextInput
-          style={{ flexWrap: 'wrap', borderColor: 'transparent', borderWidth: 1, padding: 2, paddingLeft: 10, fontSize: 24 }}
+          style={{ 
+            flexWrap: 'wrap',
+            borderColor: 'transparent', 
+            borderWidth: 1, 
+            padding: 2, 
+            paddingLeft: 10, 
+            color: "#ffffff", 
+            fontSize: 24, 
+          }}
           onChangeText={(description) => this.setState({
             description
           })}
@@ -91,7 +105,7 @@ export default class AddAnEntry extends React.Component {
         </Text>
 
         <TextInput
-          style={{ flexWrap: 'wrap', borderColor: 'transparent', borderWidth: 1, paddingLeft: 10, fontSize: 24 }}
+          style={{ flexWrap: 'wrap', borderColor: 'transparent', borderWidth: 1, paddingLeft: 10, color:"#ffffff", fontSize: 24 }}
           onChangeText={(file) => this.setState({
             file
           })}
@@ -104,17 +118,20 @@ export default class AddAnEntry extends React.Component {
         />
         <Text style={{ padding: 1 }}>
         </Text>
+      </View>  
 
-        <View style={{
-          width: DEVICE_WIDTH - 15,
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          flexDirection: "row",
-          paddingLeft: 15
-        }}>
-          <Text style={{ fontSize: 14, color: '#ffffff' }}> 5,000 character limit </Text>
-          <Text style={{ fontSize: 14, color: '#ffffff' }}> {5000 - this.state.file.length} characters remaining </Text>
-        </View>
+        <View style={styles.bottomRow}>    
+          <View style={{
+            width: DEVICE_WIDTH - 15,
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            flexDirection: "row",
+            paddingLeft: 15,
+          }}>
+            <Text style={{ fontSize: 14, color: '#ffffff' }}> 5,000 character limit </Text>
+            <Text style={{ fontSize: 14, color: '#ffffff' }}> {5000 - this.state.file.length} characters remaining </Text>
+          </View>
+        </View>  
 
       </View>
     );
@@ -130,6 +147,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingLeft: 15,
     marginTop: 45,
+  },
+  bottomRow: {
+    position: "absolute",
+    height: 40,
+    width: DEVICE_WIDTH - 15,
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    //flexDirection: "row",
+    marginTop: 735,
+  },
+  container: {
+    height: DEVICE_HEIGHT,
   },
   button: {
     alignItems: 'center',
@@ -162,6 +191,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+  },
+  textInputContainer: {
+    marginLeft: 15,
+    marginRight: 15,
   }
 });
 //passes state contents into prop method from parent Journal component
