@@ -30,24 +30,25 @@ const ReadFullEntry = (props) => {
 
         <View style={{
           // width: DEVICE_WIDTH - 95,
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexDirection: "row"
-        }}>
-          <View style={styles.container}>
-            {/* <Text style={{ padding: 15 }}> */}
+            marginTop: 7,
+            justifyContent: "center",
+            // alignItems: "center",
+            flexDirection: "row"
+          }}>
+          {/* <View style={styles.container}>
+            {/* <Text style={{ padding: 15 }}> 
             <Text>
             </Text>
-          </View>
+          </View> */}
           {/* <Ionicons
             name="md-star-outline"
             size={24}
             color="#ffffff"
           /> */}
           <Text style={{ 
-            textAlign: "center", 
+            // textAlign: "center", 
             color: '#ffffff', 
-            fontSize: 16,
+            fontSize: 20,
             }}> {props.entry.title}
           </Text>
           {/* <Ionicons
@@ -56,6 +57,7 @@ const ReadFullEntry = (props) => {
             color="#ffffff"
           /> */}
         </View>
+
         <Text style={{ padding: 0.5 }}> </Text>
         <View style={{
           backgroundColor: 'lightcyan'
@@ -65,7 +67,7 @@ const ReadFullEntry = (props) => {
           <Text style={{ 
               fontSize: 14, 
               textAlign: "center", 
-              color: '#17A2FF'
+              color: '#0B4E7A'
             }}> {props.entry.description}
           </Text>
           <Text style={{ padding: 0.5 }}>
